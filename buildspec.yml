@@ -12,5 +12,10 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync ./dist s3://codepipeline-ap-northeast-2-ef2e29729831-481f-83d3-b4e6186b714a
+      - echo POST BUILDING...
+artifacts: 
+  files:
+    - 'dist/**/*'
+    - appspec.yml
+    - scripts/*
 
